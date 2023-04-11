@@ -96,7 +96,7 @@ def sendRequests():
 
 		time.sleep(y)
 
-		print('Status: ' + str(x.status_code))
+		print('Status: ' + str(x.headers))
 
 '''
 Create function to receive UDP messages
