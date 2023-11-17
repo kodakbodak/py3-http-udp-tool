@@ -129,11 +129,19 @@ def udpSend():
 	
 	UDP_MESSAGE = input('Input a message to send using UDP packets: ')
 
-	PORT= int(UDP_PORT)
+	NUM_OF_PACKETS = int(input('How many packets would you like to send? '))
 
-	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	PORT = int(UDP_PORT)
+
+	for x in range (NUM_OF_PACKETS):
+
+		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	
-	sock.sendto(UDP_MESSAGE.encode(), (UDP_IP, PORT))
+		sock.sendto(UDP_MESSAGE.encode(), (UDP_IP, PORT))
+
+		time.sleep(0.5)
+
+		print('sent')
 
 '''
 Use a function to choose to use UDP or HTTP requests mode
