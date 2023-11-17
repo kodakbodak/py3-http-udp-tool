@@ -131,17 +131,23 @@ def udpSend():
 
 	NUM_OF_PACKETS = int(input('How many packets would you like to send? '))
 
+	PACKET_DELAY = float(input('Enter a number to set the delay between packets:'))
+
 	PORT = int(UDP_PORT)
 
 	for x in range (NUM_OF_PACKETS):
+
+		#if PACKET_DELAY == '2':
+		
+			#PACKET_DELAY = random(0.0, 5.0)
 
 		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	
 		sock.sendto(UDP_MESSAGE.encode(), (UDP_IP, PORT))
 
-		time.sleep(0.5)
+		time.sleep(PACKET_DELAY)
 
-		print('sent')
+		print('sent: ' + str(PACKET_DELAY))
 
 '''
 Use a function to choose to use UDP or HTTP requests mode
